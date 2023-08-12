@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { ContrastButton } from "../../styles/mixins";
+import { IndianMap } from "../Map/India";
 
 type Props = {};
 
@@ -77,7 +78,9 @@ const Contact = (props: Props) => {
           <Button type="submit">Send</Button>
         </Form>
       </FormContainer>
-      <MapContainer />
+      <MapContainer>
+        <IndianMap />
+      </MapContainer>
     </Section>
   );
 };
