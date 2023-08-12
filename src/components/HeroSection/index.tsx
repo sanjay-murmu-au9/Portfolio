@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Navbar } from "../Navbar";
 
 type Props = {};
 
@@ -8,7 +9,11 @@ const Section = styled.div`
 `;
 
 const HeroSection = (props: Props) => {
-  return <Section>index</Section>;
+  return (
+    <Section>
+      <Navbar />
+    </Section>
+  );
 };
 
 export { HeroSection };
