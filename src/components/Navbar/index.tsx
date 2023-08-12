@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { BodyContainer, ContrastButton } from "../../styles/mixins";
 
 type Props = {};
 
@@ -8,8 +9,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 85vw;
-  max-width: 1200px;
+  ${BodyContainer}
   display: flex;
   justify-content: space-between;
 `;
@@ -42,13 +42,7 @@ const ListItem = styled.li`
   cursor: pointer;
 `;
 const Button = styled.button`
-  width: 100px;
-  padding: 10px;
-  background-color: #da4ea2;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  ${ContrastButton}
 `;
 const SearchIcon = styled.img`
   height: 20px;
