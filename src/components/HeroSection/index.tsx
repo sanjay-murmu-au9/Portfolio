@@ -82,7 +82,7 @@ const HeroSection = (props: Props) => {
           </HeroTextSectionDescription>
           <HeroTextSectionButton>Learn More</HeroTextSectionButton>
         </HeroTextSection>
-        <HeroImageSection src="/img/moon.png" />
+        <HeroImageSection src="./img/moon.png" />
       </Container>
     </Section>
   );
