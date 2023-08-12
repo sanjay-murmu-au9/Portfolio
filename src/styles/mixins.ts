@@ -12,6 +12,7 @@ export const ContrastButton = css`
   color: #fff;
   background-color: ${ContrastColor};
   border-radius: 5px;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   width: fit-content;

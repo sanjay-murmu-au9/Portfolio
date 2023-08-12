@@ -54,6 +54,15 @@ const HeroTextSectionButton = styled.div`
 `;
 const HeroImageSection = styled.img`
   flex: 1;
+  height: 800px;
+  width: 800px;
+  animation: animate 2s infinite ease alternate;
+
+  @keyframes animate {
+    to {
+      transform: translateY(20px);
+    }
+  }
 `;
 
 const HeroSection = (props: Props) => {
