@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
 import { ContrastButton } from "../../styles/mixins";
 import { IndianMap } from "../Map/India";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 type Props = {};
 
@@ -58,13 +60,40 @@ const MapContainer = styled.div`
 `;
 
 const Contact = (props: Props) => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [emailSuccess, setEmailSuccess] = useState(false);
+
+  const handelSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID as string,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string,
+          formRef.current,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY as string
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setEmailSuccess(true);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
   return (
     <Section>
       <FormContainer>
         <Form
+          ref={formRef}
           name="contact"
           method="POST"
           data-netlify="true"
+          onSubmit={handelSubmit}
           data-netlify-honeypot="bot-field"
         >
           <Title>Contact Us</Title>
@@ -76,6 +105,11 @@ const Contact = (props: Props) => {
             rows={10}
           />
           <Button type="submit">Send</Button>
+          {emailSuccess ? (
+            `Your message has been sent!, We'll get back to you soon :`
+          ) : (
+            <></>
+          )}
         </Form>
       </FormContainer>
       <MapContainer>
