@@ -27,7 +27,7 @@ const HomePage = (props: Props) => {
     <Container>
       <HeroSection />
       <WhoAmI />
-      <Experience />
+      {/* <Experience /> */}
       <Contact />
     </Container>
   );
