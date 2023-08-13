@@ -36,6 +36,10 @@ const List = styled.ul`
   align-items: center;
   padding: 0;
   margin: 0;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const ListItem = styled.li`
   list-style: none;

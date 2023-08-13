@@ -61,7 +61,6 @@ const GraphBar = styled.div<{ width: string }>`
     position: absolute;
     top: 0;
     left: 0;
-    /* width: ${(props) => props.width}; */
     width: 0;
     animation: ${(props) => fillWidthAnimation({ width: props.width })} 0.5s
       linear both;

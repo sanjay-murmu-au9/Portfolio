@@ -14,13 +14,27 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const SkillList = styled.div`
   flex: 1;
+
+  @media screen and (max-width: 768px) {
+    flex: unset;
+  }
 `;
 const SkillGraphBox = styled.div`
   flex: 1;
+  width: 100%;
+  padding: 20px 0;
+
+  @media screen and (max-width: 768px) {
+    flex: unset;
+  }
 `;
 
 const List = styled.ul`
@@ -28,6 +42,10 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px 0;
+  }
 `;
 
 const activeSkillCss = css`
@@ -60,6 +78,10 @@ const ListItem = styled.li<{ afterText: string; active: boolean }>`
     color: pink;
     width: 0;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
   }
 `;
 

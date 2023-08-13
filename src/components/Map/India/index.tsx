@@ -46,6 +46,11 @@ const Map = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+    width: 96vw;
+  }
 `;
 
 const IndianMap = (props: Props) => {
