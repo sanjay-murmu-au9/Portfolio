@@ -5,6 +5,10 @@ import { ContrastColor } from "./variables";
 export const BodyContainer = css`
   width: 85vw;
   max-width: 1200px;
+
+  @media only screen and (max-width: 768px) {
+    width: 94vw;
+  }
 `;
 
 export const ContrastButton = css`
