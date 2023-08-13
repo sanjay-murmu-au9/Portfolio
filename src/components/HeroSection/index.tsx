@@ -30,9 +30,9 @@ const HeroTextSection = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  text-align: center;
 
   @media only screen and (max-width: 768px) {
+    text-align: center;
     gap: 25px;
   }
 `;

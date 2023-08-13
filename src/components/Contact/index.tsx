@@ -3,6 +3,7 @@ import { ContrastButton } from "../../styles/mixins";
 import { IndianMap } from "../Map/India";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 type Props = {};
 
@@ -13,6 +14,12 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    padding: 20px 0;
+    overflow: hidden;
+  }
 `;
 
 const FormContainer = styled.div`
@@ -20,12 +27,21 @@ const FormContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 94%;
+  }
 `;
 const Form = styled.form`
   width: 500px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    gap: 15px;
+  }
 `;
 
 const Title = styled.h1`
@@ -38,6 +54,10 @@ const Input = styled.input`
   background-color: #e0e0e0;
   border: none;
   border-radius: 5px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -45,6 +65,10 @@ const TextArea = styled.textarea`
   background-color: #e0e0e0;
   border: none;
   border-radius: 5px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 const Button = styled.button`
@@ -53,6 +77,11 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 20px;
   padding: 15px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 15px;
+    padding: 10px;
+  }
 `;
 
 const MapContainer = styled.div`
@@ -102,7 +131,7 @@ const Contact = (props: Props) => {
           <TextArea
             name="message"
             placeholder="Write your message here..."
-            rows={10}
+            rows={isMobile ? 6 : 10}
           />
           <Button type="submit">Send</Button>
           {emailSuccess ? (
