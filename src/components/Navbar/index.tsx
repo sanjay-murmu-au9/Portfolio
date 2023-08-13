@@ -55,7 +55,7 @@ const Navbar = (props: Props) => {
     <Section>
       <Container>
         <Links>
-          <Logo src="./img/logo.png" />
+          <Logo src="./img/ayushLogo.png" />
           <List>
             <ListItem>Home</ListItem>
             <ListItem>Skills</ListItem>
