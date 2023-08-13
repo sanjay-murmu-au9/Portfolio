@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Frontend",
+    "items": [
+      { "name": "HTML", "value": 93 },
+      { "name": "CSS", "value": 95 },
+      { "name": "Javascript", "value": 88 },
+      { "name": "React Js", "value": 92 },
+      { "name": "Next Js", "value": 85 },
+      { "name": "React Native", "value": 77 }
+    ]
+  },
+  {
+    "title": "Backend",
+    "items": [
+      { "name": "Node Js", "value": 93 },
+      { "name": "Typescript", "value": 90 },
+      { "name": "Ruby On Rails", "value": 88 },
+      { "name": "SQL", "value": 92 },
+      { "name": "No SQL", "value": 85 }
+    ]
+  },
+  {
+    "title": "DevOps",
+    "items": [
+      { "name": "Linux", "value": 55 },
+      { "name": "Shell Script", "value": 66 },
+      { "name": "Docker", "value": 70 },
+      { "name": "Ansible", "value": 62 },
+      { "name": "Git", "value": 85 }
+    ]
+  },
+  {
+    "title": "Computer Science",
+    "items": [
+      { "name": "RDBMS", "value": 95 },
+      { "name": "OOP", "value": 70 },
+      { "name": "Algorithms", "value": 50 },
+      { "name": "Operating Systems", "value": 88 }
+    ]
+  },
+  {
+    "title": "Business",
+    "items": [
+      { "name": "Presentation", "value": 70 },
+      { "name": "Digital Marketing", "value": 95 },
+      { "name": "Problem-Solving", "value": 88 },
+      { "name": "Management", "value": 93 }
+    ]
+  }
+]

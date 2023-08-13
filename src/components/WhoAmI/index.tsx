@@ -1,15 +1,10 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { BodyContainer } from "../../styles/mixins";
+import { SkillGraph } from "../Graph";
+import { useState } from "react";
+import SKILLS from "../../helpers/jsons/skills.json";
 
 type Props = {};
-
-const SkillsArray = [
-  "Frontend",
-  "Backend",
-  "Deployment",
-  "Computer Science",
-  "Business",
-];
 
 const Section = styled.div`
   ${BodyContainer};
@@ -24,7 +19,7 @@ const Section = styled.div`
 const SkillList = styled.div`
   flex: 1;
 `;
-const SkillLogo = styled.div`
+const SkillGraphBox = styled.div`
   flex: 1;
 `;
 
@@ -34,7 +29,20 @@ const List = styled.ul`
   flex-direction: column;
   gap: 20px;
 `;
-const ListItem = styled.li<{ afterText: string }>`
+
+const activeSkillCss = css`
+  &::after {
+    animation: moveText 0.5s linear both;
+
+    @keyframes moveText {
+      to {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+const ListItem = styled.li<{ afterText: string; active: boolean }>`
   font-size: 55px;
   font-weight: bold;
   color: transparent;
@@ -42,6 +50,7 @@ const ListItem = styled.li<{ afterText: string }>`
   cursor: pointer;
   position: relative;
   white-space: nowrap;
+  ${(props) => (props.active ? activeSkillCss : null)};
 
   &::after {
     content: "${(props) => props.afterText}";
@@ -52,33 +61,32 @@ const ListItem = styled.li<{ afterText: string }>`
     width: 0;
     overflow: hidden;
   }
-
-  &:hover {
-    &::after {
-      animation: moveText 0.5s linear both;
-
-      @keyframes moveText {
-        to {
-          width: 100%;
-        }
-      }
-    }
-  }
 `;
 
 const WhoAmI = (props: Props) => {
+  const [ActiveSkill, setActiveSkill] = useState(SKILLS[0]);
+
   return (
     <Section>
       <SkillList>
         <List>
-          {SkillsArray.map((skill) => (
-            <ListItem key={skill} afterText={skill}>
-              {skill}
+          {SKILLS.map((skill, index) => (
+            <ListItem
+              key={skill.title}
+              afterText={skill.title}
+              active={ActiveSkill.title === skill.title}
+              onMouseEnter={() => {
+                setActiveSkill(skill);
+              }}
+            >
+              {skill.title}
             </ListItem>
           ))}
         </List>
       </SkillList>
-      <SkillLogo></SkillLogo>
+      <SkillGraphBox>
+        <SkillGraph graphData={ActiveSkill} />
+      </SkillGraphBox>
     </Section>
   );
 };
