@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import ReactGa from "react-ga4"
 import { BodyContainer, ContrastButton } from "../../styles/mixins";
 
 type Props = {};
@@ -69,7 +70,14 @@ const Navbar = (props: Props) => {
         </Links>
         <Actions>
           <SearchIcon src="./img/search.png" />
-          <Button>Hire Now</Button>
+          <Button onClick={() => {
+            ReactGa.event({
+              category: "Core Action",
+              action: "Hire Now",
+              value: 99
+            });
+            
+          }} >Hire Now</Button>
         </Actions>
       </Container>
     </Section>
