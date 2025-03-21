@@ -83,8 +83,8 @@ const HeroTextSectionButton = styled.div`
 `;
 const HeroImageSection = styled.img`
   flex: 1;
-  height: 800px;
-  width: 800px;
+  height: 700px;
+  width: 750px;
   animation: animate 2s infinite ease alternate;
 
   @keyframes animate {
