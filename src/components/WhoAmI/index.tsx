@@ -89,7 +89,7 @@ const WhoAmI = (props: Props) => {
   const [ActiveSkill, setActiveSkill] = useState(SKILLS[0]);
 
   return (
-    <Section>
+    <Section id="skills-section">
       <SkillList>
         <List>
           {SKILLS.map((skill, index) => (

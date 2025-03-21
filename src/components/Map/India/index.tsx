@@ -40,7 +40,7 @@ const Map = styled.div`
       }
 
       // You can also highlight a specific layer via it's id
-      &[id="in-rj"] {
+      &[id="in-jh"] {
         fill: ${ContrastColor};
         /* fill: rgba(56, 43, 168, 0.6); */
       }

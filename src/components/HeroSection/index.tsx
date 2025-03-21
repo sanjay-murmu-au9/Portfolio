@@ -114,15 +114,15 @@ const HeroSection = (props: Props) => {
             container (Docker) and ship them to Digital Ocean.
           </HeroTextSectionDescription>
           <ButtonAnchorWrapper
-            href="./documents/Ayush_Ojha_Resume.pdf"
-            download="Ayush Ojha's Resume"
+            href={`${process.env.PUBLIC_URL}/documents/Sanjay_Murmu%20resume.pdf`}
+            download="Sanjay_Murmu_Resume.pdf"
             target="_blank"
             rel="noreferrer"
           >
             <HeroTextSectionButton>Download Resume</HeroTextSectionButton>
           </ButtonAnchorWrapper>
         </HeroTextSection>
-        <HeroImageSection src="./img/moon.png" />
+        <HeroImageSection src={`${process.env.PUBLIC_URL}/img/moon.png`} />
       </Container>
     </Section>
   );

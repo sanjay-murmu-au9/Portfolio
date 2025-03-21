@@ -18,7 +18,7 @@ const Container = styled.div`
   color: #fff;
   font-size: 18px;
   font-weight: bold;
-  background-image: url("./img/bg.jpeg");
+  background-image: url("${process.env.PUBLIC_URL}/img/bg.jpeg");
 
   &::-webkit-scrollbar {
     display: none;

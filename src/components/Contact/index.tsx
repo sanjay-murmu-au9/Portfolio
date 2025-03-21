@@ -115,7 +115,7 @@ const Contact = (props: Props) => {
   };
 
   return (
-    <Section>
+    <Section id="contact-section">
       <FormContainer>
         <Form
           ref={formRef}
